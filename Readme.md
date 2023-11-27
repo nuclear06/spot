@@ -1,3 +1,13 @@
+- [spot](#spot)
+  - [特性](#特性)
+  - [配置](#配置)
+  - [使用](#使用)
+    - [二进制](#二进制)
+    - [从源码编译](#从源码编译)
+    - [systemd (service)](#systemd-service)
+    - [docker](#docker)
+  - [参考](#参考)
+
 ## spot
 一个低交互的SSH蜜罐，基于golang的crypto/ssh库开发。
 
@@ -23,11 +33,11 @@
 完整的配置文件及说明(默认配置): \
 [中文](config-zh-example.yml) | [English](config-en-example.yml)
 
-### 安装
+### 使用
 
 #### 二进制
 
-[release]()
+从Github [release](https://github.com/nuclear06/spot/releases) 下载使用即可
 
 #### 从源码编译
 
@@ -72,7 +82,7 @@ docker run -d -p 22:2023 \
 
 ### 参考
 
-感谢以下项目提供的帮助：\
+感谢以下项目,为本项目提供了参考：\
 [sshesame](https://github.com/jaksi/sshesame) \
 [go-sshoney](https://github.com/ashmckenzie/go-sshoney) \
 [go-ssh-examples](https://github.com/Scalingo/go-ssh-examples)
