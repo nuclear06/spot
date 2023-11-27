@@ -90,7 +90,7 @@ func DefaultConfig() *Config {
 		MaxAuthTries:  6,
 		ServerVersion: "SSH-2.0-OpenSSH_7.4",
 		Banner:        "WARNING: YOU ARE BEING MONITORED!",
-		Addr:          "127.0.0.1:2023",
+		Addr:          "0.0.0.0:2023",
 		Log: &LogConfig{
 			IsDebug:        false,
 			IsFileOut:      false,

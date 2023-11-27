@@ -22,7 +22,7 @@ server_version: SSH-2.0-OpenSSH_7.4
 # Banner, will be displayed on the client after key exchange and before authentication
 banner: 'WARNING: YOU ARE BEING MONITORED!'
 # Listening address
-addr: 127.0.0.1:2023
+addr: 0.0.0.0:2023
 # Log configuration
 log:
   # Enable debug mode
