@@ -1,0 +1,55 @@
+# SSH 是否允许不验证的连接
+no_client_auth: false
+# SSH 密码验证
+password_auth:
+  # 启用
+  enable: true
+  # 接受所有请求
+  accept: false
+# SSH 秘钥认证
+public_key_auth:
+  # 启用
+  enable: true
+  # 接受所有请求
+  accept: false
+# SSH Host Keys的路径，用于表明主机身份，至少提供一个。如果给出路径下不存在将会在那个路径下生成一个。
+host_keys:
+  - host.key
+# 最大允许尝试次数。-1表示无限制，0表示尝试6次
+max_auth_tries: 6
+# 服务端版本，在公开握手时将会返回给客户端。根据RFC-4253 规定，服务端版本必须以SSH-2.0-开头
+server_version: SSH-2.0-OpenSSH_7.4
+# banner，将会在客户端交换秘钥之后，验证之前在客户端显示
+banner: 'WARNING: YOU ARE BEING MONITORED!'
+# 监听地址
+addr: 127.0.0.1:2023
+# 日志配置
+log:
+  # 开启debug模式
+  debug: false
+  # 是否启用日志文件输出
+  file_out: false
+  # 日志输出的文件名，仅当file_out为true时有效。开启rotate时，使用的是log.rotate.filename值
+  file_name: ./logs/ssh-honeypot.log
+  # 文件中仅记录ssh连接日志(不影响标准输出)，不记录系统日志(具有type:sys的日志)到文件(方便分析日志文件)
+  file_only_ssh_log: false
+  # 记录json格式日志
+  json: false
+  # 日志中的远程主机IP和端口分开记录，通常与json格式输出配合使用
+  separate_port: false
+  # 日志文件滚动配置
+  rotate:
+    # 是否开启日志滚动
+    enable: false
+    # 滚动日志文件名，在未启用rotate时，该配置无效
+    filename: ./logs/ssh-honeypot-rotate.log
+    # 日志文件滚动最大大小，单位MB
+    max_size: 100
+    # 日志文件保留天数，会自动删除超过天数的日志文件，设置为0表示不删除
+    max_age: 0
+    # 日志文件保留份数，会自动删除超过份数的日志文件，设置为0表示不删除
+    max_back_ups: 0
+    # 使用系统主机时间
+    localtime: true
+    # gzip压缩日志文件
+    compress: false

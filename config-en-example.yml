@@ -1,0 +1,55 @@
+# Whether SSH allows connections without verification
+no_client_auth: false
+# SSH password authentication
+password_auth:
+  # Enable
+  enable: true
+  # Accept all requests
+  accept: false
+# SSH public key authentication
+public_key_auth:
+  # Enable
+  enable: true
+  # Accept all requests
+  accept: false
+# Path of SSH Host Keys, used to prove the identity of the host, at least one should be provided. If not present at the path, one will be generated there.
+host_keys:
+  - host.key
+# Maximum allowed number of attempts. -1 means unlimited, 0 means try 6 times
+max_auth_tries: 6
+# Server version, will be returned to the client during public handshake. According to RFC-4253, the server version must start with SSH-2.0-
+server_version: SSH-2.0-OpenSSH_7.4
+# Banner, will be displayed on the client after key exchange and before authentication
+banner: 'WARNING: YOU ARE BEING MONITORED!'
+# Listening address
+addr: 127.0.0.1:2023
+# Log configuration
+log:
+  # Enable debug mode
+  debug: false
+  # Enable log file output
+  file_out: false
+  # Log output file name, effective only when file_out is true. When rotate is enabled, log.rotate.filename value is used
+  file_name: ./logs/ssh-honeypot.log
+  # Only record SSH connection logs in the file (does not affect standard output), do not record system logs (logs with type:sys) to file (for easier log file analysis)
+  file_only_ssh_log: false
+  # Record logs in JSON format
+  json: false
+  # Log remote host IP and port separately, usually used in conjunction with JSON format output
+  separate_port: false
+  # Log file rotation configuration
+  rotate:
+    # Enable log rotation
+    enable: false
+    # Rotated log file name, this configuration is ineffective if rotate is not enabled
+    filename: ./logs/ssh-honeypot-rotate.log
+    # Maximum size of the log file before rotation, in MB
+    max_size: 100
+    # Number of days to retain log files, files older than this will be automatically deleted, set to 0 for no deletion
+    max_age: 0
+    # Number of log file backups to retain, files exceeding this number will be automatically deleted, set to 0 for no deletion
+    max_back_ups: 0
+    # Use local system time
+    localtime: true
+    # Gzip compress log files
+    compress: false
