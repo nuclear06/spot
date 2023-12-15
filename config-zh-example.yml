@@ -20,7 +20,7 @@ max_auth_tries: 6
 # 服务端版本，在公开握手时将会返回给客户端。根据RFC-4253 规定，服务端版本必须以SSH-2.0-开头
 server_version: SSH-2.0-OpenSSH_7.4
 # banner，将会在客户端交换秘钥之后，验证之前在客户端显示
-banner: 'WARNING: YOU ARE BEING MONITORED!'
+banner: "WARNING: YOU ARE BEING MONITORED!"
 # 监听地址
 addr: 0.0.0.0:2023
 # 日志配置
