@@ -1,4 +1,8 @@
-/logs/
 *.key
 spot
 config.yml
+ssh-honeypot.iml
+.idea
+logs
+**/__pycache__
+**/database

@@ -20,7 +20,7 @@ max_auth_tries: 6
 # Server version, will be returned to the client during public handshake. According to RFC-4253, the server version must start with SSH-2.0-
 server_version: SSH-2.0-OpenSSH_7.4
 # Banner, will be displayed on the client after key exchange and before authentication
-banner: 'WARNING: YOU ARE BEING MONITORED!'
+banner: "WARNING: YOU ARE BEING MONITORED!"
 # Listening address
 addr: 0.0.0.0:2023
 # Log configuration
